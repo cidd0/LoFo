@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Browse Items</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Systems Plus Computer College" class="logo">
+    </header>
+    <main>
+        <h1>LO-FO</h1>
+        <h2>Lost Items</h2>
+        <input type="text" placeholder="Input placeholder" class="search-bar">
+        <div class="items-grid">
+            <div class="item">
+                <img src="path/to/image1.jpg" alt="iPhone 11">
+                <h3>iPhone 11</h3>
+                <p>Posted 1hr ago</p>
+                <p class="status lost">Lost</p>
+            </div>
+            <div class="item">
+                <img src="path/to/image2.jpg" alt="AirPods 3">
+                <h3>AirPods 3</h3>
+                <p>Posted 1 day ago</p>
+                <p class="status lost">Lost</p>
+            </div>
+            <!-- More items here -->
+        </div>
+    </main>
+
+    <div id="itemModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Item Image">
+            <h2 id="modalTitle">Item Name</h2>
+            <p><strong>Date Found:</strong> <span id="modalDate">May 31, 2023</span></p>
+            <p><strong>Location Found:</strong> <span id="modalLocation">SPCC</span></p>
+            <p><strong>Description:</strong> <span id="modalDescription">Description of the item.</span></p>
+            <p class="status" id="modalStatus">Lost</p>
+        </div>
+    </div>
+
+    <script>
+        function viewItemDetails(title, imageSrc, date, location, description, status) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('modalDate').textContent = date;
+            document.getElementById('modalLocation').textContent = location;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('modalStatus').textContent = status;
+            document.getElementById('modalStatus').className = 'status ' + status.toLowerCase();
+            document.getElementById('itemModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('itemModal').style.display = "none";
+        }
+
+        // Close the modal when the user clicks anywhere outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('itemModal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
