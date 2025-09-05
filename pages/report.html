@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <title>LoFo - Report Lost Item</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Systems Plus Computer College" class="logo">
+        <img src="../assets/images/logo.png" alt="Systems Plus Computer College" class="logo">
         <nav>
-            <button class="nav-btn" onclick="window.location.href='browse.html'">Browse Items</button>
+            <button class="nav-btn" onclick="window.location.href='../php/browse.php'">Browse Items</button>
             <button class="nav-btn" onclick="window.location.href='login.html'">Login</button>
         </nav>
     </header>
     <main>
         <h1>Report Lost Item</h1>
-        <form action="report.php" method="POST" enctype="multipart/form-data">
+        <form action="../php/report.php" method="POST" enctype="multipart/form-data">
             <label for="item_name">Item Name:</label>
             <input type="text" id="item_name" name="item_name" required>
 
